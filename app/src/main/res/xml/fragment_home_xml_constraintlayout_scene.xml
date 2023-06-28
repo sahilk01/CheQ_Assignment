@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:autoTransition="animateToEnd"
+        motion:duration="800">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/upperBg"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/totalDuesView"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/totalDuesView"
+               motion:framePosition="0"
+               android:translationY="-30dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/welcome"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/welcome"
+               motion:framePosition="0"
+               android:translationY="20dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/balanceView"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/balanceView"
+               motion:framePosition="0"
+               android:translationY="20dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/profilePictureView"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/profilePictureView"
+               motion:framePosition="0"
+               android:translationY="20dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/creditScoreHeading"
+               motion:framePosition="0"
+               android:translationY="400dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/creditScoreView"
+               motion:framePosition="0"
+               android:translationY="400dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/actionRecommendedHeading"
+               motion:framePosition="0"
+               android:translationY="400dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/actionRecommendedBanner"
+               motion:framePosition="0"
+               android:translationY="400dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/creditScoreHeading"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/creditScoreView"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/actionRecommendedHeading"
+               motion:framePosition="0"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/actionRecommendedBanner"
+               motion:framePosition="0"
+               android:alpha="0"/>
+           <KeyAttribute
+               motion:motionTarget="@+id/lowerBg"
+               motion:framePosition="0"
+               android:alpha="0"/>
+           <KeyAttribute
+               motion:motionTarget="@+id/lowerBg"
+               motion:framePosition="0"
+               android:translationY="200dp"/>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:id="@+id/upperBg"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_editor_absoluteX="1dp" />
+        <Constraint
+            android:id="@+id/upperBg"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_editor_absoluteX="0dp" />
+        <Constraint
+            android:id="@+id/upperBg"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_editor_absoluteX="0dp" />
+        <Constraint
+            android:id="@+id/upperBg"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/totalDuesView"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_editor_absoluteX="0dp" />
+<!--        <Constraint-->
+<!--            android:id="@+id/totalDuesView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            motion:layout_constraintBottom_toBottomOf="@+id/totalDuesView"-->
+<!--            motion:layout_constraintTop_toTopOf="parent"-->
+<!--            motion:layout_constraintEnd_toStartOf="@+id/guidelineEnd"-->
+<!--            motion:layout_constraintStart_toStartOf="@+id/guidelineStart"-->
+<!--            motion:layout_constraintTop_toBottomOf="@+id/welcome"/>-->
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+    </ConstraintSet>
+</MotionScene>

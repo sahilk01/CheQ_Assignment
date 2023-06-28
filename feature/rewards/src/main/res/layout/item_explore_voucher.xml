@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8dp">
+
+        <com.example.customviews.CheqImageView
+            android:id="@+id/exploreVoucherIcon"
+            android:layout_width="@dimen/_76dp"
+            android:layout_height="@dimen/_76dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/food_category" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/exploreVoucherCategory"
+            style="@style/Caption.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            app:layout_constraintEnd_toEndOf="@+id/exploreVoucherIcon"
+            app:layout_constraintStart_toStartOf="@+id/exploreVoucherIcon"
+            app:layout_constraintTop_toBottomOf="@+id/exploreVoucherIcon"
+            tools:text="Food" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

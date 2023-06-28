@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CheqSubTextButton">
+        <attr name="text" format="string"/>
+        <attr name="subtext" format="string"/>
+        <attr name="subtextIcon" format="reference"/>
+        <attr name="subtextColor" format="color"/>
+        <attr name="textColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="MeterView">
+        <attr name="meterText" format="string"/>
+        <attr name="normalText" format="string"/>
+    </declare-styleable>
+</resources>

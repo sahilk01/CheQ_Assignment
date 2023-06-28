@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="greyScaleG0">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="greyScale">#FF131414</color>
+    <color name="primaryP4">#FF5EDABF</color>
+    <color name="primaryP5Master">#00C197</color>
+    <color name="greyScaleGrey3">#E6EAE9</color>
+    <color name="greyScaleGrey4">#CACFCF</color>
+    <color name="greyScaleGrey6">#858989</color>
+    <color name="greyScaleGrey7">#6E7170</color>
+    <color name="greyScaleGrey8">#2F3131</color>
+    <color name="semanticR5Master">#F5466A</color>
+    <color name="greyScaleGrey5">#ADB2B2</color>
+    <color name="greyScaleGrey1">#FAF8F8</color>
+    <color name="greyScaleG0White">#FFFFFF</color>
+    <color name="borderGradientStart">#64FFED</color>
+    <color name="borderGradientEnd">#0C7E71</color>
+    <color name="homeBgStart">#66FAF8F8</color>
+    <color name="homeBgBottom">#66FFE3E3</color>
+    <color name="creditScoreBgStart">#FFECA9</color>
+    <color name="creditScoreBgEnd">#77FFD2</color>
+    <color name="cashBgStart">#E5FEF7</color>
+    <color name="cashBgEnd">#A9F8D4</color>
+    <color name="greyScaleGrey9">#131414</color>
+    <color name="textDarkBlue">#202948</color>
+    <color name="cashBgDown">#6AD4A0</color>
+</resources>

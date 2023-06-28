@@ -1,0 +1,11 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vouchers_cash"><![CDATA[Vouchers & Cash]]></string>
+    <string name="get_cash_instantly">Get cash instantly!</string>
+    <string name="_586">₹586</string>
+    <string name="_1_0_25">1 = ₹0.25</string>
+    <string name="explore_vouchers">EXPLORE VOUCHERS</string>
+    <string name="featured_deals">FEATURED DEALS</string>
+    <string name="_1_1_00">1 = ₹1.00</string>
+</resources>

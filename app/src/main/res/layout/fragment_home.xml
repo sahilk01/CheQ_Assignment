@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homeViewModel"
+            type="com.example.cheqassignment.viewmodel.HomeViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/greyScaleGrey1"
+            app:layoutDescription="@xml/fragment_home_xml_constraintlayout_scene"
+            tools:context=".view.HomeFragment">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_23dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_23dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/_23dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineBotton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/_23dp" />
+
+            <View
+                android:id="@+id/upperBg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/home_gradient_bg"
+                app:layout_constraintBottom_toBottomOf="@+id/totalDuesView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.example.customviews.CheqTextView
+                android:id="@+id/welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                style="@style/Heading1.600"
+                android:textColor="@color/greyScaleGrey9"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+            <com.example.balance.CoinBalanceView
+                android:id="@+id/balanceView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12dp"
+                app:balance="4,567"
+                app:layout_constraintBottom_toBottomOf="@+id/welcome"
+                app:layout_constraintEnd_toStartOf="@+id/profilePictureView"
+                app:layout_constraintTop_toTopOf="@+id/welcome" />
+
+            <com.example.customviews.ProfilePictureView
+                android:id="@+id/profilePictureView"
+                setProfilePicture="@{homeViewModel.profilePicture}"
+                android:layout_width="@dimen/_32dp"
+                android:layout_height="@dimen/_32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/welcome"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="@+id/welcome"
+                tools:src="@drawable/default_profile_picture" />
+
+            <com.example.customviews.totalDues.TotalDuesView
+                android:id="@+id/totalDuesView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_26dp"
+                android:paddingBottom="@dimen/_23dp"
+                app:dues="@{homeViewModel.totalDues}"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+            <View
+                android:id="@+id/lowerBg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/greyScaleG0White"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/totalDuesView" />
+
+            <com.example.customviews.CheqTextView
+                android:id="@+id/creditScoreHeading"
+                style="@style/Tiny600"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_33dp"
+                android:text="@string/your_credit_score"
+                android:textColor="@color/greyScaleGrey7"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/upperBg" />
+
+            <com.example.customviews.creditScore.CreditScoreView
+                android:id="@+id/creditScoreView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                app:creditScore="@{homeViewModel.creditScore}"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/creditScoreHeading" />
+
+            <com.example.customviews.CheqTextView
+                android:id="@+id/actionRecommendedHeading"
+                style="@style/Tiny600"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32dp"
+                android:text="@string/action_recommended"
+                android:textColor="@color/greyScaleGrey7"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/creditScoreView" />
+
+            <com.example.customviews.CheqImageView
+                android:id="@+id/actionRecommendedBanner"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_163dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/banner_2"
+                app:layout_constraintBottom_toTopOf="@+id/guidelineBotton"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/actionRecommendedHeading"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+    </ScrollView>
+
+</layout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="total_dues" translatable="false">TOTAL DUE</string>
+    <string name="app_name">CheQ Assignment</string>
+    <string name="welcome">Welcome</string>
+    <string name="your_credit_score">YOUR CREDIT SCORE</string>
+    <string name="action_recommended">ACTION RECOMMENDED</string>
+    <string name="home">HOME</string>
+    <string name="pay">PAY</string>
+    <string name="rewards">REWARDS</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/_75dp"
+    android:background="@drawable/rounded_border_bg"
+    android:paddingStart="@dimen/_16dp"
+    android:paddingEnd="@dimen/_29dp">
+
+    <com.example.customviews.CheqTextView
+        android:id="@+id/yourVouchersTitle"
+        style="@style/Tiny600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_vouchers"
+        android:textColor="@color/greyScaleGrey6"
+        app:layout_constraintBottom_toTopOf="@+id/youVouchersIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.example.customviews.CheqImageView
+        android:id="@+id/youVouchersIcon"
+        android:layout_width="@dimen/_74dp"
+        android:layout_height="@dimen/_24dp"
+        android:layout_marginTop="@dimen/_6dp"
+        android:src="@drawable/your_voucher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yourVouchersTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

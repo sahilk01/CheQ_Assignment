@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1200"
+        motion:autoTransition="animateToEnd">
+
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@+id/totalDueTextView"
+                motion:framePosition="0"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/totalDueTextView"
+                motion:framePosition="50"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/totalDueTextView"
+                motion:framePosition="0"
+                android:translationY="-30dp" />
+            <KeyAttribute
+                motion:motionTarget="@+id/totalDueTextView"
+                motion:framePosition="50"
+                android:translationY="-30dp" />
+
+            <KeyAttribute
+                motion:motionTarget="@+id/meter"
+                motion:framePosition="0"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/meter"
+                motion:framePosition="50"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/meter"
+                motion:framePosition="0"
+                android:translationY="-30dp" />
+            <KeyAttribute
+                motion:motionTarget="@+id/meter"
+                motion:framePosition="50"
+                android:translationY="-30dp" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/cheqSubTextButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/cardsRecyclerView"
+            android:layout_marginTop="@dimen/_26dp" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+    </ConstraintSet>
+</MotionScene>

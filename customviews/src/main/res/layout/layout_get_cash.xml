@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="95dp"
+    android:background="@drawable/get_cash_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/getCashTitle"
+            style="@style/Subtitle1.500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_18dp"
+            android:text="@string/get_cash_instantly"
+            android:textColor="@color/greyScaleGrey8"
+            app:layout_constraintBottom_toTopOf="@+id/cashBalance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/cashBalance"
+            style="@style/Headline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_18dp"
+            android:drawableEnd="@drawable/go_icon_with_bg"
+            android:drawablePadding="@dimen/_10dp"
+            android:includeFontPadding="false"
+            android:text="@string/_586"
+            android:textColor="@color/greyScaleGrey8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/getCashTitle" />
+
+        <com.example.customviews.CheqTextView
+            style="@style/Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:drawableStart="@drawable/small_chips"
+            android:drawablePadding="@dimen/_2dp"
+            android:includeFontPadding="false"
+            android:text="@string/_1_0_25"
+            android:textColor="@color/greyScaleGrey7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

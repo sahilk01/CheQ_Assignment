@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/banner_bg"
+            tools:layout_height="@dimen/_161dp">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="18dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="18dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/_20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/_20dp" />
+
+            <com.example.customviews.CheqImageView
+                android:id="@+id/bannerIcon"
+                android:layout_width="121dp"
+                android:layout_height="121dp"
+                android:src="@drawable/banner_icon"
+                app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+            <com.example.customviews.CheqTextView
+                android:id="@+id/bannerTitle"
+                style="@style/Subtitle1.700"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8dp"
+                android:textColor="@color/greyScaleGrey9"
+                app:layout_constraintEnd_toStartOf="@+id/bannerIcon"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+                tools:text="Never miss a due date with CheQ Safe" />
+
+            <com.example.customviews.CheqTextView
+                android:id="@+id/bannerSubtitle"
+                style="@style/Caption.400"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:textColor="@color/greyScaleGrey9"
+                app:layout_constraintEnd_toStartOf="@+id/bannerIcon"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/bannerTitle"
+                tools:text="Link your email &amp; get bills" />
+
+            <com.example.customviews.button.CheqButton
+                android:id="@+id/bannerButton"
+                style="@style/Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_22dp"
+                android:textColor="@color/greyScaleG0White"
+                app:backgroundTint="@color/greyScaleGrey9"
+                app:cornerRadius="@dimen/_10dp"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/bannerSubtitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

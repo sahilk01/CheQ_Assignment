@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_credit_score">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_7dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_14dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_15dp" />
+
+        <com.example.customviews.CheqImageView
+            android:id="@+id/cheqImageView"
+            android:layout_width="@dimen/_36dp"
+            android:layout_height="@dimen/_36dp"
+            android:src="@drawable/credit_health_meter"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/poweredBy"
+            style="@style/Tiny600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:text="@string/powered_by"
+            android:textColor="@color/greyScaleGrey4"
+            app:layout_constraintBottom_toTopOf="@+id/poweredByLogo"
+            app:layout_constraintStart_toEndOf="@+id/cheqImageView"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.example.customviews.CheqImageView
+            android:id="@+id/poweredByLogo"
+            android:layout_width="@dimen/_56dp"
+            android:layout_height="@dimen/_19dp"
+            android:layout_marginStart="@dimen/_11dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+            app:layout_constraintStart_toEndOf="@+id/cheqImageView"
+            app:layout_constraintTop_toBottomOf="@+id/poweredBy"
+            tools:src="@drawable/experian_logo" />
+
+        <com.example.customviews.CheqImageView
+            android:id="@+id/go_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_chevron_small"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/creditScoreMaxTextView"
+            style="@style/Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_3dp"
+            android:text="@string/_900"
+            android:textColor="@color/greyScaleGrey4"
+            app:layout_constraintBottom_toTopOf="@+id/creditScoreResult"
+            app:layout_constraintEnd_toStartOf="@+id/go_icon"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/creditScoreTextView"
+            style="@style/Headline6.700"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/greyScaleGrey9"
+            app:layout_constraintBottom_toBottomOf="@+id/creditScoreMaxTextView"
+            app:layout_constraintEnd_toStartOf="@+id/creditScoreMaxTextView"
+            app:layout_constraintTop_toTopOf="@+id/creditScoreMaxTextView"
+            tools:text="799" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/creditScoreResult"
+            style="@style/Tiny600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1dp"
+            android:layout_marginEnd="@dimen/_3dp"
+            android:textColor="@color/primaryP5Master"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+            app:layout_constraintEnd_toStartOf="@+id/go_icon"
+            app:layout_constraintTop_toBottomOf="@+id/creditScoreMaxTextView"
+            tools:text="VERY GOOD" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

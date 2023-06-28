@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="due"
+            type="com.example.customviews.totalDues.CardDue" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp">
+
+        <com.example.customviews.CheqImageView
+            android:id="@+id/cardImage"
+            android:layout_width="@dimen/_32dp"
+            android:layout_height="@dimen/_32dp"
+            android:background="@drawable/rounded_border_background"
+            android:padding="@dimen/_5dp"
+            app:imageUrl="@{due.logo}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/axis" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/cardName"
+            style="@style/Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:text="@{due.cardName}"
+            app:layout_constraintStart_toEndOf="@+id/cardImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Axis Platinum" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/cardType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:text="@{due.cardType}"
+            android:textAppearance="@style/Tiny500"
+            android:textColor="@color/greyScaleGrey6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardImage"
+            tools:text="Credit Card" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/dueAmountTextView"
+            style="@style/Tiny600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="₹30,000.06" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/overdueMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Tiny500"
+            android:textColor="@color/semanticR5Master"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dueAmountTextView"
+            tools:text="Overdue by 1 Day" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

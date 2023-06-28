@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="rewardsViewModel"
+            type="com.example.rewards.viewmodel.RewardsViewModel" />
+    </data>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".view.RewardsFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_22dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_22dp" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/title"
+            style="@style/Heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vouchers_cash"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+        <com.example.customviews.CheqImageView
+            android:id="@+id/help"
+            android:layout_width="@dimen/_28dp"
+            android:layout_height="@dimen/_28dp"
+            android:src="@drawable/help"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+        <com.example.customviews.expandedChipBalance.ExpandedChipBalanceView
+            android:id="@+id/expandedBalanceView"
+            android:layout_width="171dp"
+            android:layout_height="@dimen/_75dp"
+            android:layout_marginTop="@dimen/_20dp"
+            app:balance="@{rewardsViewModel.chipBalance}"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <include
+            android:id="@+id/yourVouchers"
+            layout="@layout/layout_your_vouchers"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_75dp"
+            android:layout_marginStart="@dimen/_20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/expandedBalanceView"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toEndOf="@+id/expandedBalanceView"
+            app:layout_constraintTop_toTopOf="@+id/expandedBalanceView" />
+
+        <include
+            android:id="@+id/getCashLayout"
+            android:layout_width="0dp"
+            android:layout_height="95dp"
+            layout="@layout/layout_get_cash"
+            android:layout_marginTop="@dimen/_20dp"
+            app:layout_constraintTop_toBottomOf="@+id/expandedBalanceView"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"/>
+
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/exploreVouchersTitle"
+            style="@style/Tiny600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_49dp"
+            android:text="@string/explore_vouchers"
+            android:textColor="@color/greyScaleGrey7"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/getCashLayout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/exploreVouchersRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_17dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/exploreVouchersTitle"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_explore_voucher" />
+
+        <View
+            android:id="@+id/featuredDealsBg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_320dp"
+            android:background="@drawable/featured_deals_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exploreVouchersRecyclerView" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/featuredDealsTitle"
+            style="@style/Tiny600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/featured_deals"
+            android:layout_marginTop="@dimen/_18dp"
+            android:textColor="@color/greyScaleGrey7"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@+id/featuredDealsBg" />
+
+        <View
+            android:id="@+id/featuredDealsPricingBg"
+            android:layout_width="98dp"
+            android:layout_height="@dimen/_29dp"
+            android:layout_marginTop="@dimen/_11dp"
+            android:background="@drawable/featured_deals_pricing"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@+id/featuredDealsBg" />
+
+        <com.example.customviews.CheqTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/cheq_coin"
+            android:drawablePadding="@dimen/_5dp"
+            android:includeFontPadding="false"
+            android:layout_marginTop="@dimen/_5dp"
+            android:text="@string/_1_1_00"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/featuredDealsPricingBg"
+            app:layout_constraintTop_toTopOf="@+id/featuredDealsPricingBg" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/featuredDeals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_24dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/featuredDealsTitle"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_featured_deal" />
+
+        <View
+            android:id="@+id/otherFeaturedDealsBg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_320dp"
+            android:layout_marginTop="@dimen/_25dp"
+            android:background="@color/greyScaleGrey1"
+            app:layout_constraintTop_toBottomOf="@id/featuredDealsBg" />
+
+        <com.example.customviews.CheqTextView
+            android:id="@+id/otherFeaturedDealsTitle"
+            style="@style/Tiny600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/featured_deals"
+            android:layout_marginTop="@dimen/_17dp"
+            android:textColor="@color/greyScaleGrey7"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@+id/otherFeaturedDealsBg" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/otherFeaturedDeals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_24dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otherFeaturedDealsTitle"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_featured_deal" />
+
+        <com.example.customviews.CheqImageView
+            android:id="@+id/rewardFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="177dp"
+            android:src="@drawable/reward_footer"
+            app:layout_constraintTop_toBottomOf="@+id/otherFeaturedDealsBg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+</layout>
